@@ -5,6 +5,7 @@
     content_type: ''
     from: @props.from
     to: @props.to
+    tab: 'html'
 
   handleInputChange: (field, event) ->
     state        = @state

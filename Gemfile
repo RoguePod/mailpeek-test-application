@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.5.2'
 gem 'sqlite3'
 gem 'sass-rails'
 gem 'uglifier'
@@ -25,7 +25,7 @@ group :development do
   gem 'bullet'
   gem 'quiet_assets'
   gem 'guard-rubocop'
-  gem 'mailpeek', path: '../gem'
+  gem 'mailpeek', '0.0.2'
 end
 
 group :development, :test do
