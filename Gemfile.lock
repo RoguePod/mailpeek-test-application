@@ -4,6 +4,7 @@ PATH
     mailpeek (1.0.0)
       jbuilder
       kaminari
+      mail
       rails
       slim-rails
       turbolinks
