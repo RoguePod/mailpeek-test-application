@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Public: ApplicationHelper
 module ApplicationHelper
   # Public: determines what type of css class to use for the type of alert

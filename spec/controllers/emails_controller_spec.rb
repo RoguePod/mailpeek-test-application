@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe EmailsController, type: :controller do
-end
+# require 'rails_helper'
+
+# RSpec.describe EmailsController, type: :controller do
+# end

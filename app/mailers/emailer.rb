@@ -1,12 +1,18 @@
+# frozen_string_literal: true
+
 # Public: Emailer
 class Emailer < ApplicationMailer
-  def email(params)
-    @body        = params[:body]
-    content_type = params[:content_type]
+  def email(html, text, files, params)
+    @html = html
+    @text = text
+
+    (files || []).each do |file|
+      attachments[file.original_filename] = file.read
+    end
 
     mail params do |format|
-      format.html if content_type.blank? || content_type == 'text/html'
-      format.text if content_type.blank? || content_type == 'text/plain'
+      format.html if @html.present?
+      format.text if @text.present?
     end
   end
 end

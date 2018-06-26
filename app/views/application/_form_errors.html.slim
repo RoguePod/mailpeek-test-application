@@ -1,0 +1,9 @@
+-# frozen_string_literal: true
+- if form.errors.any?
+  .alert.alert-danger
+    h4.alert-heading
+      = "#{pluralize(form.errors.count, "error")} prevented this record from being saved:"
+    ul
+      - form.errors.full_messages.each do |msg|
+        li
+          = msg

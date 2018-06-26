@@ -1,41 +1,50 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.0'
+ruby '2.5.1'
 
-gem 'rails', '4.2.5.2'
-gem 'sqlite3'
-gem 'sass-rails'
-gem 'uglifier'
+gem 'rails', '5.2.0'
+
+gem 'active_interaction'
+gem 'bootsnap', require: false
+gem 'bootstrap'
 gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'jbuilder'
-gem 'bootstrap-sass'
-gem 'slim-rails'
-gem 'turbolinks'
-gem 'jquery-turbolinks'
 gem 'faker'
-gem 'react-rails'
-gem 'sinatra', require: false
+gem 'god'
+gem 'jbuilder'
+gem 'jquery-rails'
+gem 'puma'
+gem 'redcarpet'
+gem 'sass-rails'
 gem 'sidekiq', require: 'sidekiq/web'
-
-gem 'sdoc', group: :doc
+gem 'slim-rails'
+gem 'sqlite3'
+gem 'turbolinks'
+gem 'uglifier'
+gem 'webpacker'
 
 group :development do
-  gem 'puma'
   gem 'bullet'
-  gem 'quiet_assets'
   gem 'guard-rubocop'
-  gem 'mailpeek', '0.0.2'
+  gem 'listen'
+  gem 'mailpeek', path: 'gems/mailpeek'
+  gem 'rubocop-rspec'
+  gem 'spring'
+  gem 'spring-watcher-listen'
+  gem 'web-console'
 end
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'simplecov'
-  gem 'byebug'
-  gem 'web-console'
-  gem 'spring'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'simplecov'
+end
+
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

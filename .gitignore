@@ -19,6 +19,11 @@
 
 /config/*.sphinx.conf
 
+config/secrets.yml
+config/database.yml
+config/cable.yml
+config/god.rb
+
 .*.swp
 **.orig
 *.sublime*
@@ -26,3 +31,4 @@
 *.rbenv*
 .rspec
 .rvmrc
+gems/*

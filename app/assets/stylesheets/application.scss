@@ -4,5 +4,9 @@
  */
 
 @import "variables";
-@import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.content {
+  padding: 20px;
+}

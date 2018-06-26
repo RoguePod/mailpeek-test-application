@@ -1,0 +1,44 @@
+-# frozen_string_literal: true
+= form_for @form, as: :email, url: emails_path, html: { novalidate: true } do |f|
+  = render 'form_errors', form: @form
+  .row
+    .col-sm
+      .form-group
+        = f.label :to
+        = f.text_field :to, class: 'form-control'
+    .col-sm
+      .form-group
+        = f.label :from
+        = f.text_field :from, class: 'form-control'
+  .form-group
+    = f.label :subject
+    = f.text_field :subject, class: 'form-control'
+  .form-group
+    = f.label :text
+    = f.text_area :text, class: 'form-control', rows: 10
+  .form-group
+    = f.label :html, 'HTML'
+    = f.text_area :html, class: 'form-control', rows: 10
+
+  .form-group
+    = f.label :attachments
+    = f.file_field :attachments, class: 'form-control', multiple: true
+
+  / .form-group
+  /   = f.label :content_type
+  /   div
+  /     .form-check.form-check-inline
+  /       = f.radio_button :content_type, '', class: 'form-check-input'
+  /       label.form-check-label(for="email_content_type_")
+  /         | Both
+  /     .form-check.form-check-inline
+  /       = f.radio_button :content_type, 'text/html', class: 'form-check-input'
+  /       label.form-check-label(for="email_content_type_texthtml")
+  /         | HTML Only
+  /     .form-check.form-check-inline
+  /       = f.radio_button :content_type, 'text/text', class: 'form-check-input'
+  /       label.form-check-label(for="email_content_type_texttext")
+  /         | Text Only
+
+  .form-group
+    = f.submit 'Send Email', class: 'btn btn-primary'

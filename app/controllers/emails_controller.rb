@@ -1,14 +1,35 @@
+# frozen_string_literal: true
+
 # Public: EmailsController
 class EmailsController < ApplicationController
-  def create
-    Emailer.email(create_params).deliver_now
+  def new
+    n = rand(1..5)
 
-    head :ok
+    data = {
+      subject: Faker::Lorem.sentence,
+      to: Faker::Internet.email,
+      from: Faker::Internet.email,
+      html: Faker::Markdown.random,
+      text: Faker::Lorem.paragraphs(n).join("\r\n\r\n")
+    }
+
+    @form = Emails::SendInteraction.new(data)
+  end
+
+  def create
+    @form = Emails::SendInteraction.run(create_params)
+
+    if @form.valid?
+      redirect_to root_path, notice: 'Email Sent'
+    else
+      render :new
+    end
   end
 
   private
 
   def create_params
-    params.permit(:to, :from, :subject, :body, :content_type)
+    params.require(:email)
+          .permit(:to, :from, :subject, :html, :text, attachments: [])
   end
 end
