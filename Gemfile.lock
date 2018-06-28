@@ -2,7 +2,9 @@ PATH
   remote: gems/mailpeek
   specs:
     mailpeek (1.0.0)
+      bootstrap
       jbuilder
+      jquery-rails
       kaminari
       mail
       rails
