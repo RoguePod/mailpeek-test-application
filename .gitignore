@@ -32,3 +32,5 @@ config/god.rb
 .rspec
 .rvmrc
 gems/*
+.irb-history
+.bash_history

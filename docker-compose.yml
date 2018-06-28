@@ -28,11 +28,3 @@ services:
       - .bash_history:/home/user/.bash_history
     depends_on:
       - redis
-
-  # webpack:
-  #   build: .
-  #   command: ./bin/webpack-dev-server
-  #   volumes:
-  #     - .:/home/user/public_html
-  #   depends_on:
-  #     - redis
