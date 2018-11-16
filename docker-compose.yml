@@ -5,9 +5,9 @@ services:
     image: redis:latest
 
   adminer:
-    image: registry.roguepod.com/adminer:latest
+    image: adminer
     ports:
-      - 9999:80
+      - 9999:8080
 
   rails:
     build: .
@@ -25,6 +25,5 @@ services:
     command: bundle exec god -c config/god.rb --no-syslog -D
     volumes:
       - .:/home/user/public_html:cached
-      - .bash_history:/home/user/.bash_history
     depends_on:
       - redis
