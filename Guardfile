@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 guard :rubocop, all_on_start: true, cli: ['-RD'] do
   watch(/.+\.rb$/)
   watch(/.+\.rake$/)

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require: rubocop-rspec
 
 AllCops:
@@ -15,10 +13,7 @@ AllCops:
     - '**/script/**/*'
     - '**/vendor/assets/**/*'
     - '**/bin/**/*'
-    - '**/gems/**/*'
     - '**/node_modules/**/*'
-    - '**/app/services/diagram/**/*'
-    - !ruby/regexp /old_and_unused\.rb$/
 AbcSize:
   Max: 30
 BlockDelimiters:

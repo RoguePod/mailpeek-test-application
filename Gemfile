@@ -29,7 +29,7 @@ group :development do
   gem 'bullet'
   gem 'guard-rubocop'
   gem 'listen'
-  gem 'mailpeek', path: 'gems/mailpeek'
+  gem 'mailpeek', path: './gems/mailpeek'
   gem 'rubocop-rspec'
   gem 'spring'
   gem 'spring-watcher-listen'

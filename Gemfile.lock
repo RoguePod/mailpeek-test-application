@@ -2,13 +2,14 @@ PATH
   remote: gems/mailpeek
   specs:
     mailpeek (1.0.0)
-      jbuilder (>= 2)
-      jquery-rails (>= 4)
-      kaminari (>= 1)
-      mail (>= 2)
-      rails (>= 4)
-      slim-rails (>= 3)
-      turbolinks (>= 5)
+      autoprefixer-rails (~> 9.3.1)
+      jbuilder (~> 2.8.0)
+      jquery-rails (~> 4.3.3)
+      kaminari (~> 1.1.1)
+      mail (~> 2.7.1)
+      rails (>= 4.0)
+      slim-rails (~> 3.2.0)
+      turbolinks (>= 4.0)
 
 GEM
   remote: https://rubygems.org/
