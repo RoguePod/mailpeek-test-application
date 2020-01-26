@@ -10,7 +10,7 @@ class EmailsController < ApplicationController
       to: Faker::Internet.email,
       from: Faker::Internet.email,
       html: Faker::Markdown.random,
-      text: Faker::Lorem.paragraphs(n).join("\r\n\r\n")
+      text: Faker::Lorem.paragraphs(number: n).join("\r\n\r\n")
     }
 
     @form = Emails::SendInteraction.new(data)

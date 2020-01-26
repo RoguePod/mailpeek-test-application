@@ -7,7 +7,7 @@ require:
 AllCops:
   Include:
     - '**/Rakefile'
-    - '**/Gemfile'`
+    - '**/Gemfile'
     - '**/config.ru'
     - '**/*.rake'
     - '**/*.jbuilder'
@@ -20,53 +20,56 @@ AllCops:
     - '**/gems/**/*'
     - '**/node_modules/**/*'
     - '**/.bundle*/**/*'
-AbcSize:
-  Max: 30
-BlockDelimiters:
+Layout/LineLength:
+  Max: 80
+Lint/AmbiguousBlockAssociation:
   Enabled: false
-BlockLength:
+Metrics/AbcSize:
+  Max: 30
+Metrics/BlockLength:
   Exclude:
-    - '**/admin/**/*'
     - '**/spec/**/*'
     - '**/app/views/**/*.jbuilder'
     - '**/lib/**/*.rake'
     - '**/config/routes.rb'
+    - '**/config/god*'
+    - '**/db/seeds.rb'
+    - '**/app/models/concerns/*'
     - '**/config/environments/*'
-ClassLength:
+Metrics/ClassLength:
   Max: 150
-Lambda:
+Metrics/MethodLength:
+  Max: 15
   Exclude:
-    - 'app/models/**/*'
-LineLength:
-  Max: 80
-  Exclude:
-    - 'config/initializers/content_security_policy.rb'
+    - '**/db/migrate/*'
+Metrics/ModuleLength:
+  Max: 150
 Output:
   Exclude:
+    - '**/db/seeds.rb'
     - '**/*.rake'
     - '**/rake_support.rb'
-MethodLength:
-  Max: 15
-ModuleLength:
-  Max: 150
-FileName:
+Naming/FileName:
   Exclude:
     - '**/Guardfile'
     - '**/Capfile'
-Lint/AmbiguousBlockAssociation:
-  Enabled: false
 Rails/UnknownEnv:
   Environments:
     - development
     - test
     - staging
     - production
-Style/Documentation:
-  Exclude:
-    - '**/db/migrate/*'
-Naming/UncommunicativeMethodParamName:
+RSpec/EmptyExampleGroup:
   Enabled: false
 RSpec/ExampleLength:
   Max: 15
 RSpec/NestedGroups:
-  Max: 4
+  Max: 5
+Style/BlockDelimiters:
+  Enabled: false
+Style/Documentation:
+  Exclude:
+    - '**/db/migrate/*'
+Style/Lambda:
+  Exclude:
+    - 'app/models/**/*'

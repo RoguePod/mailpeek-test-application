@@ -11,7 +11,7 @@ services:
 
   rails:
     build: .
-    command: ./docker-api-entrypoint.sh
+    command: ./docker-entrypoint.sh
     ports:
       - 3000:3000
     volumes:

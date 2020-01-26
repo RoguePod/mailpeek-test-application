@@ -16,7 +16,7 @@ require 'sidekiq/testing'
 # execute all jobs immediately
 Sidekiq::Testing.inline!
 
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each do |file|
+Dir[Rails.root.join('spec/support/**/*.rb')].sort.each do |file|
   require file
 end
 
