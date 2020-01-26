@@ -1,13 +1,11 @@
-FROM ruby:2.5.3
+FROM ruby:2.6.5
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN apt-get update -qq
-RUN apt-get install -y build-essential libpq-dev libxml2-dev libxslt1-dev nodejs sqlite3 libsqlite3-dev vim imagemagick libmagickwand-dev yarn
+RUN apt-get install -y build-essential libxml2-dev libxslt1-dev nodejs sqlite3 libsqlite3-dev vim imagemagick libmagickwand-dev
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -28,10 +26,10 @@ ENV HOME=/home/user
 ENV APP_HOME=$HOME/public_html
 ENV BUNDLE_GEMFILE=$APP_HOME/Gemfile
 ENV BUNDLE_JOBS=8
-ENV BUNDLE_PATH=$APP_HOME/.bundle
-ENV GEM_HOME=$APP_HOME/.bundle
+ENV BUNDLE_PATH=$APP_HOME/.bundle265
+ENV GEM_HOME=$APP_HOME/.bundle265
 
-RUN mkdir -p $APP_HOME/.bundle
+RUN mkdir -p $APP_HOME/.bundle265
 ADD .irbrc $HOME/.irbrc
 WORKDIR $APP_HOME
 

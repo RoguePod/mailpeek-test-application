@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby '2.6.5'
 
 gem 'rails', '5.2.1'
 
@@ -12,7 +12,6 @@ gem 'bootsnap', require: false
 gem 'bootstrap'
 gem 'coffee-rails'
 gem 'faker'
-gem 'god'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'puma'
@@ -30,14 +29,13 @@ group :development do
   gem 'guard-rubocop'
   gem 'listen'
   gem 'mailpeek', path: './gems/mailpeek'
+  gem 'rubocop-faker'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'web-console'
-end
-
-group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :test do
@@ -46,5 +44,3 @@ group :test do
   gem 'rspec-rails'
   gem 'simplecov'
 end
-
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

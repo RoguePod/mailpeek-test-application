@@ -1,9 +1,13 @@
-require: rubocop-rspec
+require:
+  - rubocop-faker
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   Include:
     - '**/Rakefile'
-    - '**/Gemfile'
+    - '**/Gemfile'`
     - '**/config.ru'
     - '**/*.rake'
     - '**/*.jbuilder'
@@ -13,7 +17,9 @@ AllCops:
     - '**/script/**/*'
     - '**/vendor/assets/**/*'
     - '**/bin/**/*'
+    - '**/gems/**/*'
     - '**/node_modules/**/*'
+    - '**/.bundle*/**/*'
 AbcSize:
   Max: 30
 BlockDelimiters:
@@ -25,7 +31,6 @@ BlockLength:
     - '**/app/views/**/*.jbuilder'
     - '**/lib/**/*.rake'
     - '**/config/routes.rb'
-    - '**/config/god*'
     - '**/config/environments/*'
 ClassLength:
   Max: 150

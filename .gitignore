@@ -1,4 +1,4 @@
-/.bundle
+/.bundle*
 /vendor/bundle
 
 *.log
@@ -22,7 +22,6 @@
 config/secrets.yml
 config/database.yml
 config/cable.yml
-config/god.rb
 
 .*.swp
 **.orig

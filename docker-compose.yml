@@ -11,7 +11,7 @@ services:
 
   rails:
     build: .
-    command: bundle exec rails s -b 0.0.0.0
+    command: ./docker-api-entrypoint.sh
     ports:
       - 3000:3000
     volumes:
@@ -22,7 +22,7 @@ services:
 
   sidekiq:
     build: .
-    command: bundle exec god -c config/god.rb --no-syslog -D
+    command: bundle exec sidekiq -C config/sidekiq.yml
     volumes:
       - .:/home/user/public_html:cached
     depends_on:
