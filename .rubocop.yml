@@ -20,6 +20,7 @@ AllCops:
     - '**/gems/**/*'
     - '**/node_modules/**/*'
     - '**/.bundle*/**/*'
+    - '**/gems/**/*'
 Layout/LineLength:
   Max: 80
 Lint/AmbiguousBlockAssociation:

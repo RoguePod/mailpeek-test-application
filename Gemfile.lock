@@ -1,7 +1,7 @@
 PATH
   remote: gems/mailpeek
   specs:
-    mailpeek (1.0.5)
+    mailpeek (1.0.2)
       mail (~> 2.7)
       rack (~> 2.0)
       rack-protection (~> 2.0)
